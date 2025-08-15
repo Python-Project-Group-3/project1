@@ -19,7 +19,7 @@ def Main():
     root.resizable(False, False)
 
     student_records = {
-        "41032564": {
+        "4103256": {
                 "full_name": "James Asante",
                 "basic_electronics": {
                     "midsem": 16,
@@ -40,7 +40,7 @@ def Main():
                     "calculus": (18) + (63)
                 }
             },
-        "40987542": {
+        "4098752": {
                 "full_name": "Francisca Owusu",
                 "basic_electronics": {
                     "midsem": 12,
@@ -61,7 +61,7 @@ def Main():
                     "calculus": (29) + (56)
                 }
             },
-        "40836952": {
+        "4083652": {
                 "full_name": "Maxwell Osei",
                 "basic_electronics": {
                     "midsem": 27,
@@ -82,7 +82,7 @@ def Main():
                     "calculus": (21) + (60)
                 }
             },
-        "41074102": {
+        "4107102": {
                 "full_name": "Kwame Mensah",
                 "basic_electronics": {
                     "midsem": 19,
@@ -103,7 +103,7 @@ def Main():
                     "calculus": (12) + (58)
                 }
             },
-        "40988536": {
+        "4098836": {
                 "full_name": "Lily Adjei",
                 "basic_electronics": {
                     "midsem": 30,
@@ -407,4 +407,5 @@ def Main():
     view_all_btn.pack(padx=10, fill=X)
 
     update_students_list()
+
     root.mainloop()
