@@ -234,16 +234,29 @@ def Main():
         if not student_id or not full_name:
             messagebox.showerror("Error", "Index number and Full name are required.")
             return
+        try:
+            if len(student_id) != 7:
+                raise ValueError("Invalid student_id")
+            
+            student_id = int(student_id)
+        except ValueError:
+            messagebox.showerror("Error", "Enter a valid index number.")
+            return
         if student_id in student_records:
             messagebox.showerror("Error", "Record with this Index number already exists.")
             return
         try:
-            be_midsem = float(be_midsem)
-            be_exam = float(be_exam)
-            ee_midsem = float(ee_midsem)
-            ee_exam = float(ee_exam)
-            calc_midsem = float(calc_midsem)
-            calc_exam = float(calc_exam)
+            be_midsem = float(be_midsem) if float(be_midsem) <= 30 else "N/A"
+            be_exam = float(be_exam) if float(be_exam) <= 70 else "N/A"
+            ee_midsem = float(ee_midsem) if float(ee_midsem) <= 30 else "N/A"
+            ee_exam = float(ee_exam) if float(ee_exam) <= 70 else "N/A"
+            calc_midsem = float(calc_midsem) if float(calc_midsem) <= 30 else "N/A"
+            calc_exam = float(calc_exam) if float(calc_exam) <= 70 else "N/A"
+
+            if be_midsem == "N/A" or be_exam == "N/A" or ee_midsem == "N/A" or ee_exam == "N/A" or calc_midsem == "N/A" or calc_exam == "N/A":
+                messagebox.showerror("Error", "Marks must be within the specified ranges: Midsem (0-30), Exam (0-70).")
+                return
+            
             valid = True
         except ValueError:
             messagebox.showerror("Error", "Marks must be numeric values.")
